@@ -3,9 +3,9 @@ title: "BIOS 6640 Project 1"
 author: "Cheyret Wood"
 date: "October 26, 2018"
 output:
+  word_document: default
   html_document:
     df_print: paged
-  word_document: default
   pdf_document: default
 ---
 
@@ -28,11 +28,11 @@ library(dplyr)
 ```
 
 ## Introduction to Malaria and Enviromental Factors
-Malaria is a parasite that afflicts many warm climate dwelling people. Malaria separates itself from other diseases because first, it continues to be prevalent, second, it is preventable/treatable, and third, there is a clear villain to blame (the mosquito). Though the parasite is reliant on the mosquito to be transmitted it doesn't affect the mosquito so the mosquito is able to continue in infecting others humans, while in humans the parasite is known to cause death in some cases (CDC, 2018). This singular point of infection does help to in identifying a multitude of ways to help prevent being bit.  It also helps identify periods where becoming infected with malaria is more common as the life cycle of a mosquito is something well documented and researched.  Rainfall that causes puddling, but not flooding, serves as a nursery for mosquito eggs (CDC, 2018).  Higher temperatures increase the speed at which the parasite reaches maturity in the mosquito and thus is able to be transmitted to humans (CDC, 2018). Therefore warm, wet climates like many areas of Mozambique have conditions that suite mosquito growth. Continuing in the area’s specific advantages of breeding malaria-carrying mosquitos,  different species of mosquitos serve as better vectors than others and one of the best is \textit{Anopheles gambiae}, which is the main mosquito found in Southern Africa including Mozambique (CDC, 2018). There are also types of malaria parasites that can cause more severe cases of malaria, and the one found most often in Southern Africa causes a more severe and potentially fatal malaria infection (CDC, 2018). 
+Malaria is a parasite that afflicts many warm climate dwelling people. Malaria separates itself from other diseases because first, it continues to be prevalent, second, it is preventable/treatable, and third, there is a clear villain to blame (the mosquito). Though the parasite is reliant on the mosquito to be transmitted it doesn't affect the mosquito so the mosquito is able to continue in infecting others humans, while in humans the parasite is known to cause death in some cases (CDC, 2018). This singular point of infection does help to in identifying a multitude of ways to help prevent being bit.  It also helps identify periods where becoming infected with malaria is more common as the life cycle of a mosquito is something well documented and researched.  Rainfall that causes puddling, but not flooding, serves as a nursery for mosquito eggs (CDC, 2018).  Higher temperatures increase the speed at which the parasite reaches maturity in the mosquito and thus is able to be transmitted to humans (CDC, 2018). Therefore warm, wet climates like many areas of Mozambique have conditions that suite mosquito growth. Continuing in the area’s specific advantages of breeding malaria-carrying mosquitos,  different species of mosquitos serve as better vectors than others and one of the best is *Anopheles gambiae*, which is the main mosquito found in Southern Africa including Mozambique (CDC, 2018). There are also types of malaria parasites that can cause more severe cases of malaria, and the one found most often in Southern Africa causes a more severe and potentially fatal malaria infection (CDC, 2018). 
  
 
 ## Mozambique's Specific Complications
-Mozambique has environmental conditions prime for malaria cases, specifically severe/fatal ones. With climate change affecting the weather; temperatures and precipitation over land areas are expected to rise, (EPA, 2016). This is already being reflected in the data collected, the temperature is rising, precipitation is rising, and malaria cases are rising. These environmental conditions are then paired with poor societal conditions for many of the people. The poverty rate, population growth, fertility level, and overall mortality rate are high, so people don't have access to education or medical care at the levels needed help combat this problem (CIA, 2018). Much of the population is young with 44.72% of the population under the age of 14 years old (CIA, 2018). This high proportion of children when paired with the information that young children are at a higher risk of dying from malaria means that there is a higher proportion of the population suspectable to not just getting sick from malaria, but dying (CDC, 2018).  The CDC estimates that 90% of malaria caused deaths occur in Southern Africa, with most of these being children under 5 (CDC, 2018). This is why this data focused on malaria cases of children under five years old, as these are the patients most likely to consistently become sick enough to have to visit the clinic and thus be recorded. It means that it is more likely that this dataset contains all malaria cases for this age group, while older age groups are more likely to develop less severe cases that don’t require leaving work and/or traveling to visit the clinic. The CIA ranks the country’s degree of risk for major infectious diseases at "very high", and it has become clear some of the reasons why (CIA, 2018). Mozambique can't alone reduce climate change and societal changes are slow, but it can increase access to mosquito prevention (bed nets and spraying to prevent mosquitos) to their citizens. The question that remains is when. Bed nets last 2 years, but are reliant of people using them consistently. Spraying works for a few months, but mosquitos do become resistant to the spray and it doesn’t provide protection through the entire rainy season. In order to maximize the effectiveness of these two methods, it becomes necessary to know which weather conditions are most associated with malaria cases. 
+Mozambique has environmental conditions prime for malaria cases, specifically severe/fatal ones. With climate change affecting the weather; temperatures and precipitation over land areas are expected to rise, (EPA, 2016). This is already being reflected in the data collected, the temperature is rising, precipitation is rising, and malaria cases are rising. These environmental conditions are then paired with poor societal conditions for many of the people. The poverty rate, population growth, fertility level, and overall mortality rate are high, so people don't have access to education or medical care at the levels needed help combat this problem (CIA, 2018). Much of the population is young with 44.72% of the population under the age of 14 years old (CIA, 2018). This high proportion of children when paired with the information that young children are at a higher risk of dying from malaria means that there is a higher proportion of the population suspectable to not just getting sick from malaria, but dying (CDC, 2018).  The CDC estimates that 90% of malaria caused deaths occur in Southern Africa, with most of these being children under 5 (CDC, 2018). This is why this data focused on malaria cases of children under five years old, as these are the patients most likely to suffer fatalities from malaria. The CIA ranks the country’s degree of risk for major infectious diseases at "very high", and it has become clear some of the reasons why (CIA, 2018). Mozambique can't alone reduce climate change and societal changes are slow, but it can increase access to mosquito prevention (bed nets and spraying to prevent mosquitos) to their citizens. The question that remains is when. Bed nets last 2 years, but are reliant of people using them consistently. Spraying works for a few months, but mosquitos do become resistant to the spray and it doesn’t provide protection through the entire rainy season. In order to maximize the effectiveness of these two methods, it becomes necessary to know which weather conditions are most associated with malaria cases. 
 
 ## Study Aims 
 Due to the life cycle of the parasite, it takes 7-30 days from being infected for a person to exhibit symptoms of malaria (CDC, 2018). It also takes time for a mosquito to lay eggs and for those eggs to hatch and then time for the parasite to mature and become transmittable in the mosquito. This means that it is within the interest of the study goal to investigate lagging variables in order to correlate them correcting with their effect. We want to know how long after the rain and warm weather do people become infected with malaria so that these protections can be given when they are going to be the most effective. 
@@ -118,7 +118,7 @@ tab1 <- malWeath %>%
 kable(tab1, col.names = c("Region", "Cases of Malaria", "Total Rain Fall (mm)", "Average Temperature (C)"))   
 ```
 
-If we are to look at the more general regions we can start seeing some trends among these. Coastal region has the highest cases of malaria at 5,154,219, though Northern is close behind with 5,102,962. Rainfall is high in all region except the Southern region as Center, Coastal, and Northern all have totals over 100,000 mm of rainfall. All regions average temperature over 20 degrees C, though Coastal is the highest at an average 24.2 and the lowest being the Central Region at 22.5 degrees C. The Center, Coastal, and Northern Regions all have approximately the same temperature and rainfall measurements. 
+If we are to look at the more general regions we can start seeing some trends among these. Coastal region has the highest cases of malaria at 5,154,219, though Northern is close behind with 5,102,962. Rainfall is high in all regions except the Southern region as Center, Coastal, and Northern all have totals over 100,000 mm of rainfall. All regions average temperature over 20 degrees C, though Coastal is the highest at an average 24.2 degrees C and the lowest being the Central Region at 22.5 degrees C. The Center, Coastal, and Northern Regions all have approximately the same temperature and rainfall measurements. 
 
 ```{r}
 # graphing cases overtime
@@ -173,12 +173,12 @@ ggplot(data = malWeath) +
   geom_smooth(mapping = aes(x = stand_rain, y = cpt5u, color = "rainfall")) +
   geom_smooth(mapping = aes(x = stand_temp, y = cpt5u, color = "temperature")) +
   geom_smooth(mapping = aes(x = stand_psfc, y = cpt5u, color = "psfc"))+
-  labs(x = "standarized values",  y = "Cases per 1,000", color = "Region", title = "Standarized Variables")
+  labs(x = "Standarized Values",  y = "Cases per 1,000", color = "Region", title = "Standarized Variables")
 ```
 
-This graph is standardized, so we can then look at these four variables together and see how they are related to malaria cases. If we look at the graphs here we can see that there is a relationship between rainfall and malaria and temperature and malaria. We can see that as rainfall increases so do malaria cases, but that when it comes to temperature that there seems to be more of range that the is the worst for cases. Around 0.7 standardize, but in Celsius we see that that is around 23 degrees. The PSFC also follows this same pattern.\newline
+This graph is standardized, so that these three weather related variables together can be observed together and see how they are related to malaria cases.  PSFC is included as it is the surface barometric pressure. This may help as this works as a good indicator of any significant weather changes. The graph indicates that there is a relationship between rainfall and malaria and temperature and malaria. The upward slope off rainfall shows that as rainfall increases so do malaria cases, but that when it comes to temperature that there seems to be more of an ideal range for spreading malaraia. This is around 0.7 standardize, but in Celsius that is around 23 degrees. The PSFC also follows this same pattern of there being an ideal range, which may mean that it only serves as another indication of temperature. \newline
 
-Though as it takes time for the disease to be diagnosed then there may be some benefit in lagging. We will begin by investigating lag ranging from 2 to 11 weeks (as it takes approximately 2 weeks for the patient to notice symptoms after being bitten). We will also look at the PSFC, which is surface barometric pressure. This may help as this works as a good indicator of any significant weather changes. 
+As it takes time for the disease to be diagnosed then there may be some benefit in lagging. This investigation will being with lags ranging from 2 to 11 weeks (as it takes approximately 2 weeks for the patient to notice symptoms after being bitten). 
 
 ```{r, creating lags}
 # creating lagging variables
@@ -213,15 +213,9 @@ ggplot(data = cor_df) +
 
 From this correlation graph we can see how these variables of interest are connected to cases of malaria. A lag of 4 weeks is the best for rainfall total. Average temperature continues to increase in correlation as lag increase. PSFC has a negative correlation to malaria, but it is between -0.1 to -0.15, and seems to stay fairly linear, so a lag on this variable appears to have no affect. The best week lag seems to be 6 weeks overall for rain total and average temperature. 
 
-```{r}
-ggplot(data = malWeath) +
-  geom_smooth(mapping = aes(x = malWeath$psfc, y = cpt5u, color = "lalg 0 wks")) +
-  geom_smooth(mapping = aes(x = malWeath$psfcLag_2, y = cpt5u, color = "lag 2 wks")) +
-  geom_smooth(mapping = aes(x = malWeath$psfcLag_6, y = cpt5u, color = "lag 6")) +
-  facet_wrap(~ Region, nrow=2) +
-  labs(x = "psfc", 
-       y = "Cases per 1,000", color = "", title = "PSFC Lags")
+The graphs below demonstrate how well these lags work in comparison to similar lags and if these lags are universal for the country as a whole or if regions are dismilar from one another. 
 
+```{r}
 ggplot(data = malWeath) +
   geom_smooth(mapping = aes(x = rainTotLag_4, y = cpt5u, color = "lag 4 wks")) +
   geom_smooth(mapping = aes(x = rainTotLag_6, y = cpt5u, color = "lag 6 wks")) +
@@ -235,13 +229,13 @@ ggplot(data = malWeath) +
   geom_smooth(mapping = aes(x = tavgLag_6, y = cpt5u, color = "lag 6 wks")) +
   geom_smooth(mapping = aes(x = tavgLag_8, y = cpt5u, color = "lag 8 wks")) +
   facet_wrap(~ Region, nrow=2) +
-  labs(x = "avg temp (C)", 
+  labs(x = "Average Weekly Temperature (C)", 
        y = "Cases per 1,000", color = "", title = "Temperature Lags")
 ```
 
-We again see in these graphs what the coloration plot showed us. The PSFC needs no lag. Rainfall is best lagged at 4 weeks, but we do see that the lag on average temperature may not be as important. It appears that a lag of 4 weeks may serve us just as well. This then leads to the decision that 4 weeks is the best lag for rainfall and temperature from those tested. We see that these observations remain consistent despite region. 
+These graphs demostrate similiar restults of the the coorelation plot showed us. Rainfall is best lagged at 4 weeks, but the 6 or 4 week lag on average temperature work similiarly well. A lag of 4 weeks may serve total weekly rainfall and average weekly temperature just as well. This then leads to the decision that 4 weeks is the best lag for rainfall and average temperature from those tested. These observations, furthermore, remain consistent despite region. 
 
-## Conclusions 
+#### Conclusions 
 
 From the analysis completed above it appears that it takes around 4 weeks after rainfall and ideal temperatures for patients to show symptoms of malaria.  
 
